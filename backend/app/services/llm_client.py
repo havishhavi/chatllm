@@ -10,7 +10,7 @@ class OpenAIClient:
             "Content-Type": "application/json"
         }
 
-    async def get_completion(self, message: str) -> str:
+    async def get_completion(self, message: str, history: list) -> str:
         payload = {
             "model": "gpt-3.5-turbo",
             "messages": [{"role": "user", "content": message}],
