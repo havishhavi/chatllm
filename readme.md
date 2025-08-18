@@ -25,3 +25,5 @@ venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run streamlit_app.py
 
+run tests
+pytest test/ --html=test/reports/test_report.html --self-contained-html

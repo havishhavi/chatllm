@@ -1,5 +1,6 @@
 import os
 import httpx
+from app.logger import logger 
 
 class OpenAIClient:
     def __init__(self):
@@ -11,10 +12,13 @@ class OpenAIClient:
         }
 
     async def get_completion(self, message: str, history: list) -> str:
+        logger.info("🔵 [OpenAI] Sending request...")
         payload = {
             "model": "gpt-3.5-turbo",
             "messages": [{"role": "user", "content": message}],
         }
+        logger.debug(f"📤 Prompt: {message}")
+        logger.debug(f"📚 History: {history}")
         print("Sending request to OpenAI API with payload:", message)
         print("🔑 Using API key:", self.api_key[:10], "***")  # just log first 10 characters
         async with httpx.AsyncClient() as client:
@@ -29,15 +33,14 @@ class OpenAIClient:
                 print("📥 Response body:", response.text)
 
                 response.raise_for_status()
+                logger.info("✅ [OpenAI] Response received.")
                 return response.json()["choices"][0]["message"]["content"]
 
             except httpx.HTTPStatusError as e:
                 print("❌ HTTP error:", e.response.status_code, e.response.text)
                 raise
             except Exception as e:
+                logger.error(f"❌ [OpenAI] Error: {str(e)}")
                 print("❌ General error:", str(e))
                 raise
-        #async with httpx.AsyncClient() as client:
-        #    response = await client.post(self.api_url, headers=self.headers, json=payload, timeout=10)
-        #    response.raise_for_status()
-        #    return response.json()["choices"][0]["message"]["content"]
+     

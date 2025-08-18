@@ -5,7 +5,7 @@ class GrokClient:
     def __init__(self):
         self.api_key = os.getenv("GROQ_API_KEY")
         self.api_url = "https://api.groq.com/openai/v1/chat/completions"
-        self.model = "deepseek-coder"  # ✅ or change to mixtral/llama3/gemma
+        self.model = "llama3-8b-8192"  # ✅ or change to mixtral/llama3/gemma
         self.headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json"

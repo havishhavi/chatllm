@@ -1,14 +1,13 @@
 from pydantic import BaseModel
-from typing import List, Literal
+from typing import List, Literal, Dict
 
 class ChatMessage(BaseModel):
     role: Literal["user", "assistant"]
     content: str
-    
 class ChatRequestDTO(BaseModel):
     message: str
-    model: Literal["openai", "gemini", "grok"] = "openai"
-    history: List[ChatMessage] = []
+    model: str
+    history: List[Dict[str, str]] = []   
 
 class ChatResponseDTO(BaseModel):
     reply: str

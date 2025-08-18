@@ -1,0 +1,97 @@
+************* Module app.config
+backend\app\config.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\config.py:2:0: C0411: standard import "os" should be placed before third party import "dotenv.load_dotenv" (wrong-import-order)
+************* Module app.logger
+backend\app\logger.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module app.main
+backend\app\main.py:22:0: C0304: Final newline missing (missing-final-newline)
+backend\app\main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\main.py:7:0: W0404: Reimport 'router' (imported line 3) (reimported)
+backend\app\main.py:1:0: W0611: Unused import os (unused-import)
+backend\app\main.py:4:0: W0611: Unused config imported from app (unused-import)
+************* Module app.middleware.cors_middleware
+backend\app\middleware\cors_middleware.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\middleware\cors_middleware.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module app.router.chat
+backend\app\router\chat.py:28:0: C0301: Line too long (101/100) (line-too-long)
+backend\app\router\chat.py:67:0: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\router\chat.py:73:0: C0304: Final newline missing (missing-final-newline)
+backend\app\router\chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\router\chat.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\router\chat.py:18:4: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\router\chat.py:34:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\router\chat.py:43:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\router\chat.py:47:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\router\chat.py:48:8: W0707: Consider explicitly re-raising using 'raise HTTPException(status_code=422, detail=str(ve)) from ve' (raise-missing-from)
+backend\app\router\chat.py:52:8: W0707: Consider explicitly re-raising using 'raise HTTPException(status_code=500, detail='Internal server error.') from e' (raise-missing-from)
+backend\app\router\chat.py:50:4: W0612: Unused variable 'e' (unused-variable)
+backend\app\router\chat.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\router\chat.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\router\chat.py:66:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise HTTPException(status_code=404, detail='Session history not found') from exc' (raise-missing-from)
+backend\app\router\chat.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\router\chat.py:73:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise HTTPException(status_code=500, detail='Unable to list sessions') from exc' (raise-missing-from)
+************* Module app.schemas.chat
+backend\app\schemas\chat.py:10:38: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\schemas\chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\schemas\chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\schemas\chat.py:7:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\schemas\chat.py:12:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\schemas\chat.py:2:0: C0411: standard import "typing.List" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+************* Module app.services.gemini_client
+backend\app\services\gemini_client.py:3:29: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\services\gemini_client.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\services\gemini_client.py:30:0: C0301: Line too long (106/100) (line-too-long)
+backend\app\services\gemini_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\services\gemini_client.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\services\gemini_client.py:14:4: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\gemini_client.py:25:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\gemini_client.py:30:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\gemini_client.py:34:8: W0612: Unused variable 'e' (unused-variable)
+backend\app\services\gemini_client.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module app.services.grok_client
+backend\app\services\grok_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\services\grok_client.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\services\grok_client.py:14:4: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\grok_client.py:4:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module app.services.history
+backend\app\services\history.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\services\history.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\history.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\history.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\history.py:27:0: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\history.py:3:0: W0611: Unused datetime imported from datetime (unused-import)
+************* Module app.services.llm_client
+backend\app\services\llm_client.py:3:29: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\services\llm_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\services\llm_client.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\services\llm_client.py:14:4: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\llm_client.py:20:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\llm_client.py:21:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\llm_client.py:43:16: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\llm_client.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module app.services.llm_router
+backend\app\services\llm_router.py:5:47: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\services\llm_router.py:6:29: C0303: Trailing whitespace (trailing-whitespace)
+backend\app\services\llm_router.py:31:0: C0305: Trailing newlines (trailing-newlines)
+backend\app\services\llm_router.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+backend\app\services\llm_router.py:12:0: C0115: Missing class docstring (missing-class-docstring)
+backend\app\services\llm_router.py:17:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\llm_router.py:26:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+backend\app\services\llm_router.py:28:4: C0116: Missing function or method docstring (missing-function-docstring)
+backend\app\services\llm_router.py:12:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+backend\app\services\llm_router.py:2:0: W0611: Unused import time (unused-import)
+************* Module app.services.__init__
+backend\app\services\__init__.py:1:0: R0801: Similar lines in 2 files
+==app.services.grok_client:[25:32]
+==app.services.llm_client:[25:31]
+            response = await client.post(
+                self.api_url,
+                headers=self.headers,
+                json=payload,
+                timeout=10
+            )
+ (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 6.73/10 (previous run: 6.64/10, +0.09)
+
