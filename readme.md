@@ -4,14 +4,15 @@ A simple, modular chatbot built using **FastAPI**, **OpenAI**, and **Streamlit**
 
 ---
 
-## ⚙️ Features
+## 🚀 Features
 
-- 🔌 LLM integration via OpenAI API (GPT-3.5-turbo)
-- 🧠 Streamlit UI with chat-like interface
-- 🛡️ API key security via `.env`
-- 🧾 Async FastAPI backend using `httpx`
-- 🚀 Clean project structure (backend & frontend separation)
-- 🎯 Built-in input sanitization and error handling
+- 🔄 **Multi-LLM Support**: Switch between `OpenAI`, `Gemini`, and `Grok` seamlessly.
+- 💬 **Streamlit UI**: Responsive, chat-style interface with selectable model and session.
+- 🧠 **Chat History**: Automatically saves user sessions to JSON and allows reloading conversations.
+- 🔒 **Rate Limiting**: Prevent abuse with per-session request throttling (configurable).
+- ⚙️ **FastAPI Backend**: Async-powered LLM request handling with centralized logging.
+- 📊 **HTML Test Reports**: Run tests and generate beautiful reports using `pytest-html`.
+- 🧹 **Code Quality**: Pylint scan support to enforce clean, readable code.
 
 python -m venv venv
 venv\Scripts\activate
@@ -27,3 +28,27 @@ streamlit run streamlit_app.py
 
 run tests
 pytest test/ --html=test/reports/test_report.html --self-contained-html
+
+
+
+
+Chat History
+Each session is stored in /backend/app/history/{session_id}.json.
+
+Frontend allows loading previous sessions via dropdown.
+
+You can view history via:
+
+/history/sessions – list session IDs
+
+/history/{session_id} – fetch chat log
+
+🧃 Rate Limiting
+Default: 5 requests per 60 seconds per session
+
+Configurable in: backend/app/utils/rate_limit.py
+
+Returns 429 on exceeding the limit
+
+👨‍💻 Author
+Built with ❤️ by @havishhavi
