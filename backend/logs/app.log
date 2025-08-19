@@ -1,0 +1,197 @@
+2025-08-18 10:48:20,167 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 10:52:12,079 | INFO | llm-chatbot | 📨 Received message: 'lets write a story of a monkey climbing the mountain' | model=openai
+2025-08-18 10:52:12,079 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: openai
+2025-08-18 10:52:12,083 | INFO | llm-chatbot | 🔵 [OpenAI] Sending request...
+2025-08-18 10:52:17,759 | INFO | llm-chatbot | ✅ [OpenAI] Response received.
+2025-08-18 10:52:17,759 | INFO | llm-chatbot | ✅ [OPENAI] Response generated successfully.
+2025-08-18 10:52:50,599 | INFO | llm-chatbot | 📨 Received message: 'did milo see any sunsen in the story' | model=grok
+2025-08-18 10:52:50,602 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: grok
+2025-08-18 10:52:51,834 | INFO | llm-chatbot | ✅ [GROK] Response generated successfully.
+2025-08-18 10:54:08,355 | INFO | llm-chatbot | 📨 Received message: 'continue story of milo making other friends in md foormat' | model=grok
+2025-08-18 10:54:08,356 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: grok
+2025-08-18 10:54:09,953 | INFO | llm-chatbot | ✅ [GROK] Response generated successfully.
+2025-08-18 11:04:48,665 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 20:31:27,704 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 20:32:06,886 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 20:37:18,944 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 20:37:19,042 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=openai
+2025-08-18 20:37:19,042 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: openai
+2025-08-18 20:37:19,042 | INFO | llm-chatbot | 🔵 [OpenAI] Sending request...
+2025-08-18 20:37:20,097 | INFO | llm-chatbot | ✅ [OpenAI] Response received.
+2025-08-18 20:37:20,097 | INFO | llm-chatbot | ✅ [OPENAI] Response generated successfully.
+2025-08-18 20:37:20,116 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=gemini
+2025-08-18 20:37:20,117 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: gemini
+2025-08-18 20:37:20,117 | INFO | llm-chatbot | 🟡 [Gemini] Generating response...
+2025-08-18 20:37:20,360 | ERROR | llm-chatbot | ❌ [Gemini] Failed to get response.
+Traceback (most recent call last):
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\gemini_client.py", line 27, in get_completion
+    response = self.model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-08-18 20:37:20,464 | ERROR | llm-chatbot | 💥 Unexpected server error.
+Traceback (most recent call last):
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\router\chat.py", line 40, in chat_handler
+    response = await llm.get_completion(message=message, history=history)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\llm_router.py", line 29, in get_completion
+    return await self.client.get_completion(message=message, history=history)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\gemini_client.py", line 27, in get_completion
+    response = self.model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-08-18 20:37:20,627 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=grok
+2025-08-18 20:37:20,627 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: grok
+2025-08-18 20:37:21,032 | INFO | llm-chatbot | ✅ [GROK] Response generated successfully.
+2025-08-18 20:37:21,043 | INFO | llm-chatbot | 📨 Received message: '' | model=openai
+2025-08-18 20:37:21,043 | WARNING | llm-chatbot | ⚠️ Empty or invalid message received.
+2025-08-18 20:37:21,052 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=invalid_model
+2025-08-18 20:37:21,052 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: invalid_model
+2025-08-18 20:37:21,052 | ERROR | llm-chatbot | ❌ Unsupported LLM provider: invalid_model
+2025-08-18 20:37:21,052 | WARNING | llm-chatbot | ❗ Invalid model error: Unsupported LLM provider: invalid_model
+2025-08-18 20:37:21,058 | INFO | llm-chatbot | 📨 Received message: 'What is your name?' | model=openai
+2025-08-18 20:37:21,058 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: openai
+2025-08-18 20:37:21,059 | INFO | llm-chatbot | 🔵 [OpenAI] Sending request...
+2025-08-18 20:37:22,066 | INFO | llm-chatbot | ✅ [OpenAI] Response received.
+2025-08-18 20:37:22,067 | INFO | llm-chatbot | ✅ [OPENAI] Response generated successfully.
+2025-08-18 20:43:34,605 | INFO | llm-chatbot | 🚀 FastAPI app started successfully.
+2025-08-18 20:43:34,683 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=openai
+2025-08-18 20:43:34,683 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: openai
+2025-08-18 20:43:34,684 | INFO | llm-chatbot | 🔵 [OpenAI] Sending request...
+2025-08-18 20:43:36,082 | INFO | llm-chatbot | ✅ [OpenAI] Response received.
+2025-08-18 20:43:36,083 | INFO | llm-chatbot | ✅ [OPENAI] Response generated successfully.
+2025-08-18 20:43:36,102 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=gemini
+2025-08-18 20:43:36,103 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: gemini
+2025-08-18 20:43:36,103 | INFO | llm-chatbot | 🟡 [Gemini] Generating response...
+2025-08-18 20:43:36,291 | ERROR | llm-chatbot | ❌ [Gemini] Failed to get response.
+Traceback (most recent call last):
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\gemini_client.py", line 27, in get_completion
+    response = self.model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-08-18 20:43:36,295 | ERROR | llm-chatbot | 💥 Unexpected server error.
+Traceback (most recent call last):
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\router\chat.py", line 40, in chat_handler
+    response = await llm.get_completion(message=message, history=history)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\llm_router.py", line 29, in get_completion
+    return await self.client.get_completion(message=message, history=history)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\backend\app\services\gemini_client.py", line 27, in get_completion
+    response = self.model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\havis\OneDrive\Desktop\LLM\AMZUR\chatllm\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-08-18 20:43:36,454 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=grok
+2025-08-18 20:43:36,455 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: grok
+2025-08-18 20:43:36,800 | INFO | llm-chatbot | ✅ [GROK] Response generated successfully.
+2025-08-18 20:43:36,810 | INFO | llm-chatbot | 📨 Received message: '' | model=openai
+2025-08-18 20:43:36,810 | WARNING | llm-chatbot | ⚠️ Empty or invalid message received.
+2025-08-18 20:43:36,818 | INFO | llm-chatbot | 📨 Received message: 'Hello!' | model=invalid_model
+2025-08-18 20:43:36,818 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: invalid_model
+2025-08-18 20:43:36,818 | ERROR | llm-chatbot | ❌ Unsupported LLM provider: invalid_model
+2025-08-18 20:43:36,819 | WARNING | llm-chatbot | ❗ Invalid model error: Unsupported LLM provider: invalid_model
+2025-08-18 20:43:36,824 | INFO | llm-chatbot | 📨 Received message: 'What is your name?' | model=openai
+2025-08-18 20:43:36,824 | INFO | llm-chatbot | 🔁 LLMRouter initialized with provider: openai
+2025-08-18 20:43:36,825 | INFO | llm-chatbot | 🔵 [OpenAI] Sending request...
+2025-08-18 20:43:37,684 | INFO | llm-chatbot | ✅ [OpenAI] Response received.
+2025-08-18 20:43:37,684 | INFO | llm-chatbot | ✅ [OPENAI] Response generated successfully.
